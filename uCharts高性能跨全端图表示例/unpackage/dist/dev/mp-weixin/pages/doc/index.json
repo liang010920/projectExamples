@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "手册",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "uni-icon": "/components/uni-ui/uni-icon/uni-icon"
+  }
+}

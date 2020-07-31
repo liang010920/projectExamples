@@ -1,0 +1,1 @@
+<view class="qiun-columns"><view class="qiun-bg-white qiun-title-bar qiun-common-mt"><view class="qiun-title-dot-light">多重圆弧进度条</view></view><view class="qiun-charts"><canvas class="chartsa" canvas-id="canvasArea" id="canvasArea"></canvas></view></view>

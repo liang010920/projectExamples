@@ -1,0 +1,1 @@
+<view class="qiun-columns"><button data-event-opts="{{[['tap',[['changeType']]]]}}" class="qiun-button" bindtap="__e">更改样式</button><view class="qiun-bg-white qiun-title-bar qiun-common-mt"><view class="qiun-title-dot-light">仪表盘</view></view><view class="qiun-charts"><canvas class="charts" canvas-id="canvasGauge" id="canvasGauge"></canvas></view></view>

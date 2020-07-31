@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "uCharts跨全端图表",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "uni-swiper-dot": "/components/uni-ui/uni-swiper-dot/uni-swiper-dot",
+    "uni-notice-bar": "/components/uni-ui/uni-notice-bar/uni-notice-bar",
+    "uni-grid": "/components/uni-ui/uni-grid/uni-grid"
+  }
+}
