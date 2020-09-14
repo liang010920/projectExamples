@@ -1,0 +1,187 @@
+//地图
+https://segmentfault.com/a/1190000013718011
+
+
+//分页
+https://www.cnblogs.com/ycc-521/p/9617465.html
+
+
+//vue教程
+https://www.bilibili.com/video/BV12J411m7MG/
+//vue与后台的交互
+https://juejin.im/post/59097cd7a22b9d0065fb61d2#heading-0
+//vue的总结
+https://juejin.im/post/5f0dab7df265da22cc286e70
+//axios的封装
+https://www.cnblogs.com/chaoyuehedy/p/9931146.html
+
+
+//icon图标
+https://www.iconfont.cn/
+
+
+//token
+https://www.cnblogs.com/chenwenhao/p/10466774.html
+
+https://blog.csdn.net/qq_34825875/article/details/79569579
+
+https://blog.csdn.net/qq_31906861/article/details/86187516?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.compare&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-2.compare
+
+
+//拼接接口
+export function GetParam(data) {
+
+    var query = ""
+    for (let i in data) {
+        query += i + "=" + data[i] + "&"
+    }
+
+    if (query.length > 0) query = "?" + query
+    console.log("param-----" + query)
+
+    return query
+}
+
+//小程序定位
+ var that = this
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
+
+//微信授权
+bindGetUserInfo:function(e){
+    // wx.showLoading({
+    //   title: 'abc',
+    //   duration:1000
+    // })
+    var t_this = this;
+    app.globalData.userInfo = e.detail.userInfo
+    // console.log('userInfo',e.detail.userInfo)
+    if(e.detail.userInfo){
+      t_this.loginCode();
+    }else{
+      wx.showToast({
+        title: '请先授权',
+        icon:'none',
+        duration:1000
+      })
+    }
+  },
+  loginCode:function(){
+    wx.showLoading({
+      title: '请稍后',
+      duration:1000
+    })
+    wx.login({
+      success: (res) => {
+        setTimeout(() => {
+          wx.showToast({
+            title: '授权成功',
+            duration:1000
+          })
+          
+          console.log('微信授权11',res.code)
+          wx.navigateTo({
+            url: '../map/map'
+          })
+          if(res.code){
+            wx.request({
+              url: 'url',
+              method:'POST',
+              data:{
+                code:res.code
+              },
+              success:res=>{
+
+              }
+            })
+          }
+        }, 1000);
+      },
+    })
+  },
+
+
+//uniapp的下拉刷新下拉刷新----（分页）
+mescroll.js
+
+
+//过滤器时间转换Vue.filter('s_toDateTime2', function(val) {
+	
+	var date = new Date();
+	var y = date.getFullYear();
+	var m = date.getMonth() + 1;
+	m = m < 10 ? ('0' + m) : m;
+	var d = date.getDate();
+	d = d < 10 ? ('0' + d) : d;
+	var h = date.getHours();
+	h = h < 10 ? ('0' + h) : h;
+	var minute = date.getMinutes();
+	var second = date.getSeconds();
+	minute = minute < 10 ? ('0' + minute) : minute;
+	second = second < 10 ? ('0' + second) : second;
+	var timeZuHe = y + '/' + m + '/' + d + ' ' + h + ':' + minute + ':' + second;
+
+	if (!val) {
+		return '暂无';
+	}
+	val = val.split('-').join('/')
+	try {
+
+		val = val.replace("T", " ");
+
+		if (Date.parse(val) <= Date.parse("2001/1/1 00:00:00")) {
+			return timeZuHe;
+		}
+
+		return new Date(val).format("yyyy-MM-dd hh:mm");
+
+	} catch (e) {
+		return val;
+	}
+
+});
+
+//uniapp上传图片
+<view class="bg-img " @click="ChooseImage">
+	<image :src="apiUrl + userInfoList.MemberPhoto" mode="aspectFill"></image>
+</view>
+
+ChooseImage() {
+				uni.chooseImage({
+					count: 1, //默认9
+					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+					sourceType: ['album'], //从相册选择
+					success: (res) => {
+						this.UploadPhoto(res);
+					}
+				});
+			},
+			UploadPhoto(res) {
+				let t_data = this;
+				const tempFilePaths = res.tempFilePaths;
+
+				for (let i = 0; i < tempFilePaths.length; i++) {
+					uni.uploadFile({
+						url: 'http://tbm.subei88.com/api/Common/UploadPhoto?type=member ', //仅为示例，非真实的接口地址
+						filePath: tempFilePaths[i],
+						name: 'file',
+						formData: {
+							type: 'asset'
+						},
+						success(res) {
+							if (res.statusCode == 200 && res.errMsg == 'uploadFile:ok') {
+								let ret = JSON.parse(res.data);
+								t_data.userInfoList.MemberPhoto = ret.info
+							}
+						}
+					});
+				}
+			},
