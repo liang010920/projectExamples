@@ -2,15 +2,15 @@
   <div class="navbar">
     <!-- <img class="logo" :src="logo" /> -->
     <div class="item_title">
-      <div class="item_title_img">
+      <!-- <div class="item_title_img">
         <img src="static/img/icon/7.png">
       </div>
       <div class="item_title_img2">
        <img src="static/img/icon/a3.png">
-      </div>
+      </div> -->
       <div class="item_tltle_text">
-          <p>China</p>
-          <p>Resource</p>
+        <p>智慧健康</p>
+        <p>zhihuijiankang</p>
       </div>
     </div>
     <div class="nav-items-container">
@@ -23,8 +23,8 @@
       </div>
     </div>
     <el-popover
-      placement="bottom"
       :visible-arrow="false"
+      placement="bottom"
       popper-class="no-padding-popover"
       width="200"
       trigger="click"
@@ -33,7 +33,7 @@
         <!-- <div class="handel-item"
         ><i class="wukong wukong-personcenter"></i>{{memberInfo}}</div>-->
         <div class="handel-item" @click="handleClick('goout')">
-          <i class="wukong wukong-goout"></i>退出登录
+          <i class="wukong wukong-goout"/>退出登录
         </div>
         <!-- <div class="handel-item hr-top"
              style="pointer-events: none;"
@@ -47,11 +47,11 @@
       <div slot="reference" class="user-container">
         <div
           v-photo="userInfo"
-          class="user-img div-photo"
-          :key="userInfo.img"
           v-lazy:background-image="$options.filters.filterUserLazyImg(userInfo.img)"
-        ></div>
-        <i class="el-icon-caret-bottom mark"></i>
+          :key="userInfo.img"
+          class="user-img div-photo"
+        />
+        <i class="el-icon-caret-bottom mark"/>
       </div>
     </el-popover>
   </div>
@@ -62,18 +62,6 @@ import { mapGetters } from 'vuex'
 import { Loading } from 'element-ui'
 
 export default {
-  data() {
-    return {
-      navIndexChild: 0,
-      memberInfo: JSON.parse(localStorage.getItem('memberInfo'))
-    }
-  },
-  props: {
-    navIndex: {
-      type: [Number, String],
-      default: 0
-    }
-  },
   filters: {
     langName: function(value) {
       if (value) {
@@ -84,6 +72,18 @@ export default {
     }
   },
   components: {},
+  props: {
+    navIndex: {
+      type: [Number, String],
+      default: 0
+    }
+  },
+  data() {
+    return {
+      navIndexChild: 0,
+      memberInfo: JSON.parse(localStorage.getItem('memberInfo'))
+    }
+  },
   computed: {
     ...mapGetters(['userInfo', 'lang', 'logo', 'crm', 'bi', 'manage']),
     items() {
@@ -126,7 +126,7 @@ export default {
   },
   methods: {
     getBannerInfo() {
-      let routeData = this.$router.resolve({
+      const routeData = this.$router.resolve({
         path: '/bigScreen'
       })
 

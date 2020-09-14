@@ -1,0 +1,192 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/login/login",
+			"style": {
+				"app-plus": {
+					"scrollIndicator": "none", //隐藏滚动条
+					"bounce": "none", //关闭反弹效果
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/index/index",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/home/home",
+			"style": {
+				"app-plus": {
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		},
+		{
+			"path": "pages/login/forget",
+			"style": {
+				"app-plus": {
+					"scrollIndicator": "none", //隐藏滚动条
+					"bounce": "none", //关闭反弹效果
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/login/register",
+			"style": {
+				"app-plus": {
+					"scrollIndicator": "none", //隐藏滚动条
+					"bounce": "none", //关闭反弹效果
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/home/warnlist",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/home/warnSetting",
+			"style": {}
+		}, {
+			"path": "pages/home/memberInfo",
+			"style": {}
+		}, {
+			"path": "pages/device/device",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/device/deviceDetails",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/device/deviceEchar",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/video/video",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/device/deviceAirEchar",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/device/deviceWeightEchar",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/device/deviceTmbEchar",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}, {
+			"path": "pages/device/deviceWeightTotalEchar",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in",
+					"bounce": "none", //关闭反弹效果
+					"scrollIndicator": "none", //隐藏滚动条
+					"titleNView": false
+				}
+			}
+		}
+	    ,{
+            "path" : "pages/video/videoBig",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/home/news",
+            "style" : {
+				"app-plus": {
+					"animationType": "fade-in",
+					"scrollIndicator": "none", //隐藏滚动条
+					"bounce": "none", //关闭反弹效果
+					"titleNView": false
+				}}
+        }
+        ,{
+            "path" : "pages/video/videolist",
+            "style" : {}
+        }
+    ],
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "盾构机",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#0d69b2"
+	}
+
+	// "tabBar": {
+	// 	"color": "#B5B5B5", //tab 上文字的默认样式
+	// 	"selectedColor": "#FEE42B", //tab 上选中文字的样式
+	// 	"borderStyle": "black", //tab 上边框的颜色 可选 black / white
+	// 	"backgroundColor": "#FFFFFF", //tab 上的背景色
+	// 	"list": [{
+	// 		"pagePath": "pages/index/docot",
+	// 		"iconPath": "static/tabbar/index.png",
+	// 		"selectedIconPath": "static/tabbar/indexed.png",
+	// 		"text": "首页"
+	// 	}, {
+	// 		"pagePath": "pages/home/home",
+	// 		"iconPath": "static/tabbar/home.png",
+	// 		"selectedIconPath": "static/tabbar/homeed.png",
+	// 		"text": "我的"
+	// 	}]
+	// }
+
+}

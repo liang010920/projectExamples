@@ -1,0 +1,58 @@
+/* flex布局 */
+.u-f,
+.u-f-ac,
+.u-f-ajc {
+	display: flex;
+}
+
+.u-f-ac,
+.u-f-ajc {
+	align-items: center;
+}
+
+.u-f-ajc {
+	justify-content: center;
+}
+
+.u-f-jsb {
+	justify-content: space-between;
+}
+
+.u-f1 {
+	flex: 1;
+}
+
+.u-f-column {
+	flex-direction: column; //属性决定主轴的方向（即项目的排列方向）。
+}
+
+
+.btn-hover{
+	transform: scale(.90);
+	transition: all .5s;
+	opacity: .8;
+}
+
+/* 角标 --- 全局样式 */
+.angleStart {
+	position: absolute;
+	right: -80upx;
+	top: 0;
+}
+.start {
+	width: 220upx;
+	height: 70upx;
+	line-height: 70upx;
+	text-align: center;
+	transform: rotate(-315deg);
+	font-size: 26upx;
+}
+.start_bg1_color {
+	background-color: #409eff;
+	color: #fff;
+}
+
+.start_bg2_color {
+	background-color: #FF0101;
+	color: #fff;
+}

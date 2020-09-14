@@ -4,7 +4,7 @@
     <div class="item_index1">
 
       <div class="item_block">
-        <img src="./../../../static/img/icon/5.png" class="titleImg" />
+        <img src="./../../../static/img/icon/5.png" class="titleImg" >
         <span class="topTitle">数据实时统计</span>
       </div>
 
@@ -13,7 +13,7 @@
           <el-col :span="6">
             <el-row>
               <el-col :span="12" align="right" style="padding-right: 10px;">
-                <div><img src="./../../../static/img/icon/1.png" alt /></div>
+                <div><img src="./../../../static/img/icon/1.png" alt ></div>
               </el-col>
               <el-col :span="12" align="left">
                 <div>总人数</div>
@@ -27,7 +27,7 @@
           <el-col :span="6">
             <el-row>
               <el-col :span="12" align="right" style="padding-right: 10px;">
-                <div><img src="./../../../static/img/icon/2.png" alt /></div>
+                <div><img src="./../../../static/img/icon/2.png" alt ></div>
               </el-col>
               <el-col :span="12" align="left">
                 <div>总人数</div>
@@ -41,7 +41,7 @@
           <el-col :span="6">
             <el-row>
               <el-col :span="12" align="right" style="padding-right: 10px;">
-                <div><img src="./../../../static/img/icon/3.png" alt /></div>
+                <div><img src="./../../../static/img/icon/3.png" alt ></div>
               </el-col>
               <el-col :span="12" align="left">
                 <div>总人数</div>
@@ -52,20 +52,20 @@
               </el-col>
             </el-row>
           </el-col>
-         <el-col :span="6">
-           <el-row>
-             <el-col :span="12" align="right" style="padding-right: 10px;">
-               <div><img src="./../../../static/img/icon/4.png" alt /></div>
-             </el-col>
-             <el-col :span="12" align="left">
-               <div>总人数</div>
-               <div style="font-size: 20px !important;">
-                 3656
-                 <span style="font-size:12px;color:rgba(195,195,195)">人</span>
-               </div>
-             </el-col>
-           </el-row>
-         </el-col>
+          <el-col :span="6">
+            <el-row>
+              <el-col :span="12" align="right" style="padding-right: 10px;">
+                <div><img src="./../../../static/img/icon/4.png" alt ></div>
+              </el-col>
+              <el-col :span="12" align="left">
+                <div>总人数</div>
+                <div style="font-size: 20px !important;">
+                  3656
+                  <span style="font-size:12px;color:rgba(195,195,195)">人</span>
+                </div>
+              </el-col>
+            </el-row>
+          </el-col>
         </el-row>
       </div>
     </div>
@@ -73,32 +73,32 @@
       <el-col :span="8">
         <div class="grid-content bg-purple-dark">
           <div class="item_comme2 u-f-ac">
-            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" />
+            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" >
             <div class="item_title topTitle">报警消息</div>
           </div>
           <el-row class="c-bgColor">
             <el-col :span="12">
               <div>
-                <div class="item_center_warnning_img"><img src="./../../../static/img/icon/f.png" width="48px" height="46px"/></div>
+                <div class="item_center_warnning_img"><img src="./../../../static/img/icon/f.png" width="48px" height="46px"></div>
                 <div class="c-fontSize">今日报警</div>
                 <div class="item_center_zero">0</div>
               </div>
             </el-col>
             <el-col :span="12">
               <div>
-                <div class="item_center_thought_img"><img src="./../../../static/img/icon/g.png" /></div>
+                <div class="item_center_thought_img"><img src="./../../../static/img/icon/g.png" ></div>
                 <div class="c-fontSize">概况预览</div>
                 <div class="item_center_zero">0</div>
               </div>
             </el-col>
           </el-row>
           <div class="item_comme1 u-f-ac">
-            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" />
+            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" >
             <div class="item_title topTitle">睡眠统计</div>
           </div>
           <el-row class="">
             <el-col :span="24">
-              <div id="sleep" :style="{width: '100%', height: '352px'}"></div>
+              <div id="sleep" :style="{width: '100%', height: '352px'}"/>
             </el-col>
           </el-row>
         </div>
@@ -106,44 +106,44 @@
       <el-col :span="8" align="left" style="margin: 0 20px;">
         <div class="grid-content bg-purple-dark">
           <div class="item_comme1 u-f-ac">
-            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" />
+            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" >
             <div class="item_title topTitle">健康咨询</div>
           </div>
           <div class="item_index2 cItem_index2">
             <!--健康资讯-->
             <el-tabs v-model="activeName">
-                <el-tab-pane label="置顶消息" name="first">
-                  <div class="item_comter" style="height: 8rem;">
-                    <div class="item_comter_list" v-for="(item, index) in 18" :key="index">
-                      <div class="item_comter_title">
-                        【公告】xxxxxx，xxxxxxxx【公告】xxxxxx，xxxxxxxxxx
-                      </div>
-                     </div>
-                    <div class="more">更多</div>
+              <el-tab-pane label="置顶消息" name="first">
+                <div class="item_comter" style="height: 8rem;">
+                  <div v-for="(item, index) in 18" :key="index" class="item_comter_list">
+                    <div class="item_comter_title">
+                      【公告】肚子上肥肉太多很烦人，哪些动作可以减掉？
+                    </div>
                   </div>
+                  <div class="more">更多</div>
+                </div>
 
-                </el-tab-pane>
-                <el-tab-pane label="健康知识" name="second">
-                  <div class="item_comter" style="height: 8rem;">
-                    <div class="item_comter_list" v-for="(item, index) in 18" :key="index">
-                      <div class="item_comter_title">
-                        【公告】yyyyyyy，yyyyyyyy【公告】yyyyyyy，yyyyyyyy
-                      </div>
-                     </div>
-                    <div class="more">更多</div>
+              </el-tab-pane>
+              <el-tab-pane label="健康知识" name="second">
+                <div class="item_comter" style="height: 8rem;">
+                  <div v-for="(item, index) in 18" :key="index" class="item_comter_list">
+                    <div class="item_comter_title">
+                      【公告】夏季养生小常识合集
+                    </div>
                   </div>
+                  <div class="more">更多</div>
+                </div>
 
-                </el-tab-pane>
-              </el-tabs>
+              </el-tab-pane>
+            </el-tabs>
           </div>
           <div class="item_comme2 u-f-ac">
-            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" />
+            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" >
             <div class="item_title topTitle">步数统计</div>
           </div>
           <el-row class="stepsPadding">
             <el-col :span="24">
-              <div id="steps" :style="{width: '100%', height: '352px'}"></div>
-              </el-col>
+              <div id="steps" :style="{width: '100%', height: '352px'}"/>
+            </el-col>
           </el-row>
         </div>
 
@@ -151,27 +151,27 @@
       <el-col :span="8">
         <div class="grid-content bg-purple-dark">
           <div class="item_comme3 u-f-ac">
-            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" />
+            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" >
             <div class="item_title topTitle">人员导入</div>
           </div>
           <div class="item_index2">
             <!--人员导入模块-->
             <div class="item u-f-column u-f-ac c-padding">
               <div class="u-f-ac">
-                <div class="item_left_img"><img src="./../../../static/img/icon/e.png"/></div>
+                <div class="item_left_img"><img src="./../../../static/img/icon/e.png"></div>
                 <div class="item_info">用户信息导入</div>
               </div>
             </div>
           </div>
           <div class="item_comme2 u-f-ac">
-            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" />
+            <img class="item_icon titleImg" src="./../../../static/img/icon/5.png" >
             <div class="item_title topTitle">数据统计</div>
           </div>
           <!-- 数据统计 -->
           <div class="item_index3">
             <div class="item u-f-column u-f-ac u-f1">
               <div class="doctor_block_left" style="width: 100%;">
-                <div id="myChart" :style="{width: '100%', height: '417px'}"></div>
+                <div id="myChart" :style="{width: '100%', height: '417px'}"/>
               </div>
             </div>
           </div>
@@ -182,7 +182,7 @@
 </template>
 
 <script>
-import { GetMemberDoctorList, MemberHealthAdd, GetMemberHealthList, GetMemberIndex, GetMemberHealthInfo_ByWarnId } from '@/api/oamanagement/workbench';
+import { GetMemberDoctorList, MemberHealthAdd, GetMemberHealthList, GetMemberIndex, GetMemberHealthInfo_ByWarnId } from '@/api/oamanagement/workbench'
 export default {
   data() {
     return {
@@ -211,64 +211,69 @@ export default {
         doctor_SearchInput: '',
         memberInform: ''
       }
-    };
+    }
+  },
+  watch: {
+    doctor_InputValue(val) {
+      this.GetMemberDoctorList(val)
+    }
   },
   mounted() {
-    this.GetMemberIndex();
+    this.GetMemberIndex()
     // 绘制图表数据统计
-    this.dataLine();
-    //步数统计
-    this.steps();
-    //睡眠统计
-    this.sleep();
-    console.log('用户信息---------------' + localStorage.getItem('memberInfo'));
-    console.log('用户id----------------' + localStorage.getItem('memberID'));
+    this.dataLine()
+    // 步数统计
+    this.steps()
+    // 睡眠统计
+    this.sleep()
+    console.log('用户信息---------------' + localStorage.getItem('memberInfo'))
+    console.log('用户id----------------' + localStorage.getItem('memberID'))
   },
   methods: {
     // 绘制图表数据统计
-    dataLine(){
+    dataLine() {
             // 基于准备好的dom，初始化echarts实例
-            let myChart = this.$echarts.init(document.getElementById('myChart'))
-            var cost = [0.5, 0.201, 0.6,0.7, 0.301, 0.301,0.4,0.2]//本期比上期（大于1按1处理）
-            var dataCost = [10.01,200,200,1000.01,200000,200,200000,1000]//真是的金额
-            var totalCost = [ 1,1, 1, 1,1,1]//比例综合
-            var visits = [10, 20, 30,40, 50, 60,92,100]//本期占总的百分比*100
-            var grade = ['心脏病','糖尿病','高血压','高血压','高血脂', '高血脂']
-            var myColor = ['#f9d2a4' ];
+            const myChart = this.$echarts.init(document.getElementById('myChart'))
+            var cost = [0.5, 0.201, 0.6, 0.7, 0.301, 0.301, 0.4, 0.2]// 本期比上期（大于1按1处理）
+            var dataCost = [10.01, 200, 200, 1000.01, 200000, 200, 200000, 1000]// 真是的金额
+            var totalCost = [1, 1, 1, 1, 1, 1]// 比例综合
+            var visits = [10, 20, 30, 40, 50, 60, 92, 100]// 本期占总的百分比*100
+            var grade = ['心脏病', '糖尿病', '高血压', '高血压', '高血脂', '高血脂']
+            var myColor = ['#f9d2a4']
             var data = {
                 grade: grade,
                 cost: cost,
                 totalCost: totalCost,
                 visits: visits,
-                dataCost:dataCost
-            };
+                dataCost: dataCost
+            }
 
             myChart.setOption({
                  // backgroundColor: '#05274C',
                     title: {
-                        top: '2%',
+                        top: '2%'
                     },
                     grid: {
                         left: '130',
                         right: '100'
                     },
                     xAxis: {
-                        show: false,
+                        show: false
                     },
                     yAxis: {
 
                         type: 'category',
                         axisLabel: {
-                            margin:30,
+                            margin: 30,
                             show: true,
                             color: '#000',
                             fontSize: 14
                         },
                         axisTick: {
-                            show: false,
+                            show: false
                         },
                         axisLine: {
-                            show: false,
+                            show: false
                         },
                         data: data.grade
                     },
@@ -283,8 +288,8 @@ export default {
                                 fontSize: 14,
                                 formatter:
                                 function(param) {
-                                    return data.visits[param.dataIndex] +'%';
-                                },
+                                    return data.visits[param.dataIndex] + '%'
+                                }
                             }
                         },
                         barWidth: '30%',
@@ -294,10 +299,10 @@ export default {
                                 borderWidth: 2,
                                 barBorderRadius: 15,
                                 color: 'rgba(102, 102, 102,0)'
-                            },
+                            }
                         },
                         z: 1,
-                        data: data.totalCost,
+                        data: data.totalCost
                         // data: da
                     }, {
                         type: 'bar',
@@ -307,9 +312,9 @@ export default {
                              normal: {
                                 barBorderRadius: 16,
                                 color: function(params) {
-                                    var num = myColor.length;
+                                    var num = myColor.length
                                     return myColor[params.dataIndex % num]
-                                },
+                                }
                             }
                         },
                         max: 1,
@@ -321,17 +326,17 @@ export default {
                             }
                         },
                         labelLine: {
-                            show: true,
+                            show: true
                         },
                         z: 2,
-                        data: data.cost,
+                        data: data.cost
                     }]
-            });
+            })
     },
-    //步数统计
-    steps(){
+    // 步数统计
+    steps() {
       // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById('steps'))
+      const myChart = this.$echarts.init(document.getElementById('steps'))
       myChart.setOption({
             title: {},
                backgroundColor: "#fff",
@@ -341,7 +346,7 @@ export default {
                    left: '3%',
                    right: '3%',
                    bottom: '4%',
-                   containLabel: true,
+                   containLabel: true
                },
                legend: {
                    itemGap: 50,
@@ -349,27 +354,27 @@ export default {
                    textStyle: {
                        color: '#f9f9f9',
                        borderColor: '#fff'
-                   },
+                   }
                },
                xAxis: [{
                    type: 'category',
                    boundaryGap: true,
-                   axisLine: { //坐标轴轴线相关设置。数学上的x轴
+                   axisLine: { // 坐标轴轴线相关设置。数学上的x轴
                        show: true,
                        lineStyle: {
                            color: '#000'
-                       },
+                       }
                    },
-                   axisLabel: { //坐标轴刻度标签的相关设置
+                   axisLabel: { // 坐标轴刻度标签的相关设置
                        textStyle: {
                            color: '#000',
-                           margin: 15,
-                       },
+                           margin: 15
+                       }
                    },
                    axisTick: {
-                       show: false,
+                       show: false
                    },
-                   data: ['2020-7-11', '2020-7-12', '2020-7-13', '2020-7-14', '2020-7-15', '2020-7-16', '2020-7-17', ],
+                   data: ['2020-7-11', '2020-7-12', '2020-7-13', '2020-7-14', '2020-7-15', '2020-7-16', '2020-7-17']
                }],
                yAxis: [{
                    type: 'value',
@@ -383,30 +388,30 @@ export default {
                        }
                    },
                    axisLine: {
-                       show: false,
+                       show: false
                    },
                    axisLabel: {
                        margin: 20,
                        textStyle: {
-                           color: '#000',
+                           color: '#000'
 
-                       },
+                       }
                    },
                    axisTick: {
-                       show: false,
-                   },
+                       show: false
+                   }
                }],
                series: [{
                    name: '注册总量',
                    type: 'line',
-                   smooth: true, //是否平滑曲线显示
+                   smooth: true, // 是否平滑曲线显示
                    // 			symbol:'circle',  // 默认是空心圆（中间是白色的），改成实心圆
                    showAllSymbol: true,
                    symbol: 'emptyCircle',
                    symbolSize: 6,
                    lineStyle: {
                        normal: {
-                           color: "#f9d2a4", // 线条颜色
+                           color: "#f9d2a4" // 线条颜色
                        },
                        borderColor: '#f0f'
                    },
@@ -414,21 +419,21 @@ export default {
                        show: true,
                        position: 'top',
                        textStyle: {
-                           color: '#000',
+                           color: '#000'
                        }
                    },
                    itemStyle: {
                        normal: {
-                           color: "#28ffb3",
+                           color: "#28ffb3"
 
                        }
                    },
                    tooltip: {
                        show: false
                    },
-                   areaStyle: { //区域填充样式
+                   areaStyle: { // 区域填充样式
                        normal: {
-                           //线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
+                           // 线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
                            color: new this.$echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                    offset: 0,
                                    color: '#f9d2a4'
@@ -437,19 +442,19 @@ export default {
                                    offset: 1,
                                    color: '#ffa337'
                                }
-                           ], false),
+                           ], false)
                            // shadowColor: 'rgba(53,142,215, 0.9)', //阴影颜色
                            // shadowBlur: 20 //shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
                        }
                    },
                    data: [5000, 1200, 11010, 26000, 7000, 13000, 15000]
                 }]
-      });
+      })
     },
 
-    //睡眠统计
-    sleep(){
-      let sleepEcharts = this.$echarts.init(document.getElementById('sleep'));
+    // 睡眠统计
+    sleep() {
+      const sleepEcharts = this.$echarts.init(document.getElementById('sleep'))
 
       sleepEcharts.setOption({
           backgroundColor: '#fff',
@@ -468,7 +473,7 @@ export default {
                       color: '#000'
                   }
               },
-              color: ['#c2c1bd', '#00a1e5', '#23c768', '#e5ce10', '#ff7e00', '#fe0000', ],
+              color: ['#c2c1bd', '#00a1e5', '#23c768', '#e5ce10', '#ff7e00', '#fe0000'],
               series: [
                   {
                       name: '睡眠时间',
@@ -478,8 +483,8 @@ export default {
                       sort: 'ascending',
                       label: {
                           normal: {
-                              formatter: '{b}',
-                          },
+                              formatter: '{b}'
+                          }
                       },
                       labelLine: {
                           normal: {
@@ -530,7 +535,7 @@ export default {
                               formatter: '{c}%',
                               textStyle: {
                                   color: '#fff',
-                                  fontSize:14,
+                                  fontSize: 14
                               }
                           },
                           emphasis: {
@@ -575,105 +580,105 @@ export default {
       })
     },
     GetMemberIndex() {
-      let t_data = this;
-      let param = {
+      const t_data = this
+      const param = {
         memberId: ''
-      };
+      }
       GetMemberIndex(param).then(res => {
         if (res.status) {
-          t_data.memberIndexInfo_total = res.info.total;
-          t_data.memberIndexInfo_totalWarn = res.info.totalWarn;
-          t_data.memberIndexInfo_totalChart = res.info.totalChart;
-          t_data.getData_HeightEcharts(res.info.totalChart);
-          t_data.data_earlyEcharts(res.info.totalChartPre);
-          t_data.data_warnInfo_Echarts(res.info.totalWarnChart);
+          t_data.memberIndexInfo_total = res.info.total
+          t_data.memberIndexInfo_totalWarn = res.info.totalWarn
+          t_data.memberIndexInfo_totalChart = res.info.totalChart
+          t_data.getData_HeightEcharts(res.info.totalChart)
+          t_data.data_earlyEcharts(res.info.totalChartPre)
+          t_data.data_warnInfo_Echarts(res.info.totalWarnChart)
         }
-      });
+      })
     },
 
     getEarlyWarning(id) {
-      let t_data = this;
-      let param = {
+      const t_data = this
+      const param = {
         id: id
-      };
+      }
       GetMemberHealthInfo_ByWarnId(param).then(res => {
-        t_data.Is_Show_assess = true;
-        t_data.member_form.WarnMemberId = res.info.healthMemberId;
-        t_data.member_form.HealthMemberDoctorId = res.info.healthMemberDoctorId;
-        t_data.member_form.memberName = res.info.HealthMemberName;
-        t_data.member_form.doctor_SearchInput = res.info.HealthMemberDoctorName;
-        t_data.member_form.HealthWarnId = res.info.healthWarnId;
-        t_data.member_form.memberInform = res.info.healthIntro;
-      });
+        t_data.Is_Show_assess = true
+        t_data.member_form.WarnMemberId = res.info.healthMemberId
+        t_data.member_form.HealthMemberDoctorId = res.info.healthMemberDoctorId
+        t_data.member_form.memberName = res.info.HealthMemberName
+        t_data.member_form.doctor_SearchInput = res.info.HealthMemberDoctorName
+        t_data.member_form.HealthWarnId = res.info.healthWarnId
+        t_data.member_form.memberInform = res.info.healthIntro
+      })
     },
 
     GetMemberDoctorList(val) {
-      let t_data = this;
+      const t_data = this
       if (val == undefined) {
-        val = '';
+        val = ''
       }
-      let param = {
+      const param = {
         memberName: val
-      };
+      }
       GetMemberDoctorList(param).then(res => {
-        t_data.doctorList = res.info.list;
-      });
-    }, //保存评估信息
+        t_data.doctorList = res.info.list
+      })
+    }, // 保存评估信息
     save_assess() {
-      let t_data = this;
+      const t_data = this
       if (t_data.member_form.HealthMemberDoctorId == '') {
-        this.$message.error('请选择医生');
-        return;
+        this.$message.error('请选择医生')
+        return
       }
       if (t_data.member_form.HealthLevel == '') {
-        this.$message.error('请选择评估健康状态');
-        return;
+        this.$message.error('请选择评估健康状态')
+        return
       }
       if (t_data.member_form.textarea_assess == '') {
-        this.$message.error('请填写评估内容');
-        return;
+        this.$message.error('请填写评估内容')
+        return
       }
-      let param = t_data.member_form;
-      console.log('params---------------' + param);
+      const param = t_data.member_form
+      console.log('params---------------' + param)
       MemberHealthAdd(param).then(res => {
         if (res.status) {
           this.$notify({
             title: '温馨提示',
             message: '评估成功',
             type: 'success'
-          });
+          })
         }
 
-        t_data.Is_Show_assess = false;
-        t_data.member_form.HealthLevel = '';
-        t_data.member_form.textarea_assess = '';
-        t_data.GetMemberIndex();
-      });
+        t_data.Is_Show_assess = false
+        t_data.member_form.HealthLevel = ''
+        t_data.member_form.textarea_assess = ''
+        t_data.GetMemberIndex()
+      })
     },
 
-    //个人评估记录
+    // 个人评估记录
     GetMemberHealthList() {
-      let t_data = this;
-      let param = {
+      const t_data = this
+      const param = {
         memberName: t_data.member_form.memberName
-      };
-      t_data.Is_Show_MyAssessInfo = true;
+      }
+      t_data.Is_Show_MyAssessInfo = true
       GetMemberHealthList(param).then(res => {
-        t_data.tableData_AssessInfo = res.info.list;
-      });
+        t_data.tableData_AssessInfo = res.info.list
+      })
     },
 
     getDocto_item(index, id, name) {
-      this.list_index = index;
-      this.member_form.HealthMemberDoctorId = id;
-      this.member_form.doctor_SearchInput = name;
+      this.list_index = index
+      this.member_form.HealthMemberDoctorId = id
+      this.member_form.doctor_SearchInput = name
     },
 
     getData_HeightEcharts(data) {
-      let t_data = this;
-      let echarts = require('echarts');
-      let myChart = t_data.$echarts.init(document.getElementById('data_HeightEcharts'));
-      let option = {
+      const t_data = this
+      const echarts = require('echarts')
+      const myChart = t_data.$echarts.init(document.getElementById('data_HeightEcharts'))
+      const option = {
         calculable: true,
         tooltip: {
           trigger: 'axis'
@@ -695,7 +700,7 @@ export default {
           type: 'category',
           boundaryGap: false,
           axisLine: {
-            //这是x轴文字颜色
+            // 这是x轴文字颜色
             lineStyle: {
               width: 1,
               color: '#4164BD'
@@ -705,7 +710,7 @@ export default {
         },
         yAxis: {
           axisLine: {
-            //这是x轴文字颜色
+            // 这是x轴文字颜色
             lineStyle: {
               width: 1,
               color: '#4164BD'
@@ -820,14 +825,14 @@ export default {
             data: data.dataY3
           }
         ]
-      };
-      myChart.setOption(option);
+      }
+      myChart.setOption(option)
     },
     data_earlyEcharts(data) {
-      let t_data = this;
-      let echarts = require('echarts');
-      let myChart = t_data.$echarts.init(document.getElementById('data_earlyEcharts'));
-      let option = {
+      const t_data = this
+      const echarts = require('echarts')
+      const myChart = t_data.$echarts.init(document.getElementById('data_earlyEcharts'))
+      const option = {
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b}: {c} ({d}%)'
@@ -865,15 +870,15 @@ export default {
             data: [{ value: data.dataY[0], name: data.dataX[0] }, { value: data.dataY[1], name: data.dataX[1] }, { value: data.dataY[2], name: data.dataX[2] }]
           }
         ]
-      };
+      }
 
-      myChart.setOption(option);
+      myChart.setOption(option)
     },
     data_warnInfo_Echarts(data) {
-      let t_data = this;
-      let echarts = require('echarts');
-      let myChart = t_data.$echarts.init(document.getElementById('data_warnInfo_Echarts'));
-      let option = {
+      const t_data = this
+      const echarts = require('echarts')
+      const myChart = t_data.$echarts.init(document.getElementById('data_warnInfo_Echarts'))
+      const option = {
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -898,17 +903,12 @@ export default {
             data: [{ value: data.dataY[0], name: '未处理' }, { value: data.dataY[1], name: '已处理' }]
           }
         ]
-      };
+      }
 
-      myChart.setOption(option);
-    }
-  },
-  watch: {
-    doctor_InputValue(val) {
-      this.GetMemberDoctorList(val);
+      myChart.setOption(option)
     }
   }
-};
+}
 </script>
 
 <style scoped lang="scss">

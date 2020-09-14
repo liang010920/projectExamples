@@ -6,28 +6,28 @@
         <div class="item_Add" @click="getTableInfo">
           <el-button type="primary">
             发布
-            <i class="el-icon-upload el-icon--right"></i>
+            <i class="el-icon-upload el-icon--right"/>
           </el-button>
         </div>
         <div class="item_name">
           <span style="color: #000;">按标题查询</span>
-          <el-input v-model="newsTitle" placeholder="请输入标题" prefix-icon="el-icon-search"></el-input>
+          <el-input v-model="newsTitle" placeholder="请输入标题" prefix-icon="el-icon-search"/>
         </div>
       </div>
     </div>
     <div>
-      <div class="divbox" v-for="(list,index) in NewsList" :key="index">
+      <div v-for="(list,index) in NewsList" :key="index" class="divbox">
         <img
+          v-if="list.NewsPhoto"
           :src="base_img+list.NewsPhoto"
           class="image"
-          v-if="list.NewsPhoto"
           @click="IS_show_pup =true,compile_btn(list.ID)"
-        />
-        <img :src="url" class="image" @click="IS_show_pup =true,compile_btn(list.ID)" v-else />
-        <div class="content">{{list.NewsTitle}}</div>
+        >
+        <img v-else :src="url" class="image" @click="IS_show_pup =true,compile_btn(list.ID)" >
+        <div class="content">{{ list.NewsTitle }}</div>
 
         <div class="ReleaseInfo">
-          <div class="ReleaseRime">{{list.NewsDate}}</div>
+          <div class="ReleaseRime">{{ list.NewsDate }}</div>
           <el-button type="primary" plain @click="IS_show_compile =true,compile_btn(list.ID)">编辑</el-button>
           <el-button type="danger" plain @click="delete_btn(list.ID)">删除</el-button>
         </div>
@@ -35,87 +35,93 @@
     </div>
     <el-dialog :visible.sync="IS_show_pup">
       <div class="pup_info">
-        <div class="pup_title">{{NewsInfo.NewsTitle}}</div>
-        <p class="pup_time">{{NewsInfo.NewsDate}}</p>
-        <p class="pup_content" v-html="NewsInfo.NewsContent"></p>
-        <img :src="base_img+NewsInfo.NewsPhoto" class="pup_img" v-if="NewsInfo.NewsPhoto" />
+        <div class="pup_title">{{ NewsInfo.NewsTitle }}</div>
+        <p class="pup_time">{{ NewsInfo.NewsDate }}</p>
+        <p class="pup_content" v-html="NewsInfo.NewsContent"/>
+        <img v-if="NewsInfo.NewsPhoto" :src="base_img+NewsInfo.NewsPhoto" class="pup_img" >
       </div>
     </el-dialog>
-    <el-dialog title="健康发布" :visible.sync="IS_show_main" width="80%">
+    <el-dialog :visible.sync="IS_show_main" title="健康发布" width="80%">
       <el-form ref="form" label-width="120px">
         <el-form-item label="标题">
-          <el-input v-model="fromItem.newsTitle" placeholder="请填写健康标题"></el-input>
+          <el-input v-model="fromItem.newsTitle" placeholder="请填写健康标题"/>
+        </el-form-item>
+        <el-form-item label="健康标签">
+          <el-input placeholder="请填写健康标签"/>
         </el-form-item>
         <el-form-item label="健康图片">
           <el-upload
             ref="imageUpload"
             :action="crmFileSaveUrl"
             :headers="httpHeader"
-            name="file"
             :data="{type: 'img', batchId: batchId}"
-            multiple
             :limit="1"
-            accept="image/*"
-            list-type="picture-card"
             :on-preview="handleFilePreview"
             :before-remove="beforeRemove"
             :on-success="imgFileUploadSuccess"
+            name="file"
+            multiple
+            accept="image/*"
+            list-type="picture-card"
           >
             <p class="add-img">
-              <span class="el-icon-picture"></span>
+              <span class="el-icon-picture"/>
               <span>添加图片</span>
             </p>
           </el-upload>
         </el-form-item>
         <el-form-item label="健康内容" style="height:300px">
           <quill-editor
-            class="editor"
             ref="myTextEditor"
-            style="height:250px"
             v-model="fromItem.newsContent"
             :options="editorOption"
+            class="editor"
+            style="height:250px"
             @blur="onEditorBlur($event)"
             @focus="onEditorFocus($event)"
             @ready="onEditorReady($event)"
             @change="onEditorChange($event)"
-          ></quill-editor>
+          />
           <!-- <el-input type="textarea" v-model="fromItem.newsContent" :rows="7" placeholder="请填写健康内容"></el-input> -->
         </el-form-item>
       </el-form>
 
       <div slot="footer" class="dialog-footer" style="clear:both">
         <el-button @click="IS_show_main = false">取 消</el-button>
-        <el-button v-on:click="NewsSave">保 存</el-button>
+        <el-button @click="NewsSave">保 存</el-button>
       </div>
     </el-dialog>
-    <el-dialog title="修改知识" :visible.sync="IS_show_compile" width="80%">
+    <el-dialog :visible.sync="IS_show_compile" title="修改知识" width="80%">
       <el-form ref="form" label-width="120px">
         <el-form-item label="标题">
-          <el-input v-model="title_New" placeholder="请填写健康标题"></el-input>
+          <el-input v-model="title_New" placeholder="请填写健康标题"/>
         </el-form-item>
-        <el-form-item label="健康图片" v-if="!ImageList">
+        <el-form-item label="健康标签">
+          <el-input placeholder="请填写健康标签"/>
+        </el-form-item>
+        <el-form-item v-if="!ImageList" label="健康图片">
           <el-upload
             ref="imageUpload"
             :action="crmFileSaveUrl"
             :headers="httpHeader"
-            name="file"
             :data="{type: 'img', batchId: batchId}"
-            multiple
             :limit="1"
-            accept="image/*"
-            list-type="picture-card"
             :on-preview="handleFilePreview"
             :before-remove="beforeRemove"
             :on-success="imgFileUploadSuccess"
+            name="file"
+            multiple
+            accept="image/*"
+            list-type="picture-card"
           >
             <p class="add-img">
-              <span class="el-icon-picture"></span>
+              <span class="el-icon-picture"/>
               <span>添加图片</span>
             </p>
-            <i class="el-icon-plus"></i>
+            <i class="el-icon-plus"/>
           </el-upload>
         </el-form-item>
-        <el-form-item label="健康图片" v-else>
+        <el-form-item v-else label="健康图片">
           <div
             style="width:150px;height:150px;border:1px solid #999 ;padding:5px;position: relative; "
           >
@@ -123,27 +129,27 @@
               style="position: absolute; top:-5px;right:0;font-size:50px;color:red;cursor: pointer;"
               @click="delete_Img()"
             >×</i>
-            <img :src="base_img+ImageList" alt style="width:100%;height:100%;" />
+            <img :src="base_img+ImageList" alt style="width:100%;height:100%;" >
           </div>
         </el-form-item>
         <el-form-item label="健康内容" style="height:300px">
           <quill-editor
-            class="editor"
             ref="myTextEditor"
-            style="height:250px"
             v-model="content_New"
             :options="editorOption"
+            class="editor"
+            style="height:250px"
             @blur="onEditorBlur($event)"
             @focus="onEditorFocus($event)"
             @ready="onEditorReady($event)"
             @change="onEditorChange($event)"
-          ></quill-editor>
+          />
         </el-form-item>
       </el-form>
 
       <div slot="footer" class="dialog-footer" style="clear:both">
         <el-button @click="IS_show_compile = false">取 消</el-button>
-        <el-button type="primary" v-on:click="News_compile()">保 存</el-button>
+        <el-button type="primary" @click="News_compile()">保 存</el-button>
       </div>
     </el-dialog>
   </div>
@@ -164,7 +170,7 @@ export default {
   data() {
     return {
       url: './../../../../static/img/timg.jpg',
-      base_img: 'http://java1.subei88.com:8080/upload/',
+      base_img: 'http://t.subei88.com:8080/upload/',
       currentDate: new Date().toLocaleString(),
       IS_show_main: false,
       IS_show_pup: false,
@@ -205,18 +211,14 @@ export default {
             [{ align: [] }], // 对齐方式
             ['clean'], // 清除文本格式
             ['link', 'image', 'video'] // 链接、图片、视频
-          ] //工具菜单栏配置
+          ] // 工具菜单栏配置
         },
-        placeholder: '请在这里添加产品描述', //提示
-        readyOnly: false, //是否只读
-        theme: 'snow', //主题 snow/bubble
-        syntax: true //语法检测
+        placeholder: '请在这里添加产品描述', // 提示
+        readyOnly: false, // 是否只读
+        theme: 'snow', // 主题 snow/bubble
+        syntax: true // 语法检测
       }
     }
-  },
-  mounted() {
-    this.getNewData()
-    this.GetNewsList()
   },
   computed: {
     crmFileSaveUrl() {
@@ -227,6 +229,20 @@ export default {
         'Admin-Token': axios.defaults.headers['Admin-Token']
       }
     }
+  },
+
+  watch: {
+    newsTitle(val) {
+      this.GetNewsList(val)
+    },
+    dataTime(val) {
+      console.log('val=' + val)
+      this.GetNewsList(val)
+    }
+  },
+  mounted() {
+    this.getNewData()
+    this.GetNewsList()
   },
   methods: {
     getNewData() {
@@ -248,16 +264,16 @@ export default {
       console.log('结束时间-----------' + t_data.dateEnd)
     },
 
-    //删除
+    // 删除
     delete_btn(id) {
-      let t_data = this
+      const t_data = this
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
         type: 'warning'
       })
         .then(() => {
-          let param = {
+          const param = {
             id: id
           }
           NewsDelete(param).then(res => {
@@ -279,10 +295,10 @@ export default {
         })
     },
 
-    //新闻详情
+    // 新闻详情
     compile_btn(id) {
-      let t_data = this
-      let param = {
+      const t_data = this
+      const param = {
         id: id
       }
 
@@ -296,7 +312,7 @@ export default {
       })
     },
     News_compile() {
-      let t_data = this
+      const t_data = this
 
       if (t_data.ImageList) {
         if (t_data.title_New == '') {
@@ -432,7 +448,7 @@ export default {
         .catch(() => {})
     },
     NewsSave() {
-      let t_data = this
+      const t_data = this
       if (t_data.fromItem.newsTitle == '') {
         this.$message.error('请上传健康标题')
         return
@@ -445,7 +461,7 @@ export default {
         this.$message.error('请上传健康内容')
         return
       }
-      let param = {
+      const param = {
         newsTitle: t_data.fromItem.newsTitle,
         newsPhoto: t_data.imageFileList[0].response.info,
         newsContent: t_data.fromItem.newsContent
@@ -470,11 +486,11 @@ export default {
     },
     GetNewsList(val) {
       console.log('val=' + val)
-      let t_data = this
+      const t_data = this
       if (val == undefined) {
         val = ''
       }
-      let param = {
+      const param = {
         newsTitle: t_data.newsTitle
       }
       t_data.loading = true
@@ -485,20 +501,10 @@ export default {
         // t_data.IS_show_pup = true;
       })
     },
-    //删除图片
+    // 删除图片
     delete_Img() {
       var t_data = this
       t_data.ImageList = ''
-    }
-  },
-
-  watch: {
-    newsTitle(val) {
-      this.GetNewsList(val)
-    },
-    dataTime(val) {
-      console.log('val=' + val)
-      this.GetNewsList(val)
     }
   }
 }

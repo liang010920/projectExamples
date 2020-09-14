@@ -1,25 +1,21 @@
 /** 项目管理路由 */
 import Layout from '@/views/layout/workbenchLayout'
 
-function memberType(){
+function memberType() {
   var memberType = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 
-  if(JSON.parse(localStorage.getItem("memberInfo")) != null){
-
-    if(JSON.parse(localStorage.getItem("memberInfo")).MemberType == '3'){
-      memberType = [ '5', '6', '7', '8', '9']
+  if (JSON.parse(localStorage.getItem("memberInfo")) != null) {
+    if (JSON.parse(localStorage.getItem("memberInfo")).MemberType == '3') {
+      memberType = ['5', '6', '7', '8', '9']
     }
-    
-    if(JSON.parse(localStorage.getItem("memberInfo")).MemberType == '9'){
+
+    if (JSON.parse(localStorage.getItem("memberInfo")).MemberType == '9') {
       memberType = ['1', '2', '3', '4', '5', '6', '7', '10']
     }
-
   }
 
   return memberType
-
 }
-
 
 // console.log("路由页面的权限菜单---------------" + memberType())
 
@@ -155,7 +151,7 @@ const workbenchRouter = {
           component: () => import('@/views/OAManagement/system/systemLog/index'),
           hidden: memberType().indexOf('14') == -1,
           meta: {
-            title: '操作日志',
+            title: '标签管理',
             icon: 'reminder'
           }
         },
