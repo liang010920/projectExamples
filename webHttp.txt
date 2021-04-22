@@ -1,3 +1,9 @@
+﻿//pc字体自适应
+$(window).on('resize', function () {
+    document.documentElement.style.fontSize = ($(document.documentElement).width() / 750) * 100 + 'px';
+})
+document.documentElement.style.fontSize = ($(document.documentElement).width() / 750) * 100 + 'px';
+
 //地图
 https://segmentfault.com/a/1190000013718011
 
@@ -185,3 +191,51 @@ ChooseImage() {
 					});
 				}
 			},
+
+
+//加载动画
+https://www.lanrentuku.com/wap/gif/a/loading_4.html
+
+//初始化保留两位小数和离开后保留两位小数
+$(".inputKeep input").val(Number($(".inputKeep input").val()).toFixed(2));
+
+    $(".inputKeep input").blur(function () {
+        var value = $(this).val();
+        var bool = true;
+        if (!value) {
+            alert('金额不能为空');
+        } else if (value.split('.').length > 2) {
+            bool = false;
+        } else {
+            value = Math.round(value * Math.pow(10, 2)) / Math.pow(10, 2); //四舍五入
+            value = Number(value).toFixed(2); //不足补位
+            this.form.money = value;
+        }
+        if (bool) {
+            $(this).val(value);
+        } else {
+            $(this).val(valueCun);
+        }
+    });
+
+
+//复制到剪切板
+https://www.jb51.net/article/160136.htm
+
+//flex布局属性
+http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html
+
+//聊天气泡
+https://www.cnblogs.com/aliyue/p/5896176.html
+
+//mock
+https://blog.csdn.net/weixin_44524835/article/details/109244955?ops_request_misc=%25257B%252522request%25255Fid%252522%25253A%252522160939744916780263033040%252522%25252C%252522scm%252522%25253A%25252220140713.130102334..%252522%25257D&request_id=160939744916780263033040&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-109244955.first_rank_v2_pc_rank_v29&utm_term=vue%E4%BD%BF%E7%94%A8mock
+
+//vue for循环多选
+https://www.cnblogs.com/mei1234/p/10417600.html
+
+//获取textarea中的光标位置以及添加字符
+https://www.jb51.net/article/14362.htm
+
+//图
+https://coolbackgrounds.io/
